@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -55,6 +57,9 @@ public class SinhVienAdapter extends BaseAdapter  {
 
         TextView tvBerthday = (TextView) convertView.findViewById(R.id.tvBerthday);
         tvBerthday.setText(String.valueOf(arraySinhVien.get(position).mBerthday));  //mBerthday là kiểu int
+
+        Animation animation = AnimationUtils.loadAnimation(myContext, R.anim.anim_listview);
+        convertView.startAnimation(animation);
 
         return convertView;
     }
